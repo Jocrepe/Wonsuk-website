@@ -1,6 +1,8 @@
 <script setup>
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRouter } from 'vue-router';
 import { ref, onMounted } from 'vue';
+
+const router = useRouter()
 
 const isLoggedIn = ref(false)
 
@@ -14,7 +16,9 @@ onMounted(() => {
 const logout = () => {
     localStorage.removeItem('LoggedIn')
     isLoggedIn.value = false
-    window.location.reload()
+    // window.location.reload()
+    router.push('/')
+
 }
 
 </script>
@@ -29,11 +33,11 @@ const logout = () => {
             </div>
             <div class="flex gap-2">
                 <input type="text" placeholder="Search" class="text-xl input input-bordered w-24 md:w-auto mr-10" />
-                
+
                 <div v-if="!isLoggedIn">
                     <RouterLink to="/login"><button class="btn btn-success">Log In</button></RouterLink>
                 </div>
-                
+
                 <div v-else class="dropdown dropdown-end">
                     <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                         <div class="w-10 rounded-full">
