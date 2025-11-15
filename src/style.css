@@ -6,3 +6,7 @@
 @theme {
   --font-kanit: 'Kanit', sans-serif;
 }
+
+p {
+  font-family: 'kanit';
+}

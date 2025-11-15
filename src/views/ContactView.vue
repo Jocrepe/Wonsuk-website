@@ -26,7 +26,7 @@ const send = () => {
 
 <template>
   <UserLayout>
-    <div class="flex w-full mb-50 gap-2 mt-10 lg:mx-10">
+    <div class="flex w-full mb-50 gap-2 mt-10 lg:mx-5">
       <div class="relative flex flex-col items-center bg-success-content w-250 rounded-xl border" >
         <RouterLink to="/repairshop">
           <div class="w-8 h-8 absolute cursor-pointer lg:[top:20px] lg:[left:30px]">
