@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="grid grid-cols-3 mb-15 gap-10">
+  <div class="grid mb-15 lg:grid-cols-2 lg:gap-5 lg:m-5 2xl:grid-cols-3 2xl:gap-10">
     <div v-for="i in repairshops" class="card bg-info-content w-full rounded-3xl shadow-md">
       <figure class="px-10 pt-10 pb-5">
         <img :src="i.imageUrl" alt="" class="w-full h-90" />
@@ -19,7 +19,7 @@ defineProps({
         </h2>
         <div class="flex">
           <p class="text-xl">Review : {{ i.reviewscore }} / 5.0</p>
-          <img src="@/assets/icon/star.png" alt="" class="w-5 h-5 mr-66">
+          <img src="@/assets/icon/star.png" alt="" class="w-5 h-5 lg:mr-66 2xl:mr-60">
         </div>
         <p class="text-xl">{{ i.about }}</p>
         <p class="text-xl">open : {{ i.open }}</p>
