@@ -9,6 +9,7 @@ import { RouterLink } from 'vue-router';
   <UserLayout>
     <div class="overflow-hidden w-full relative">
       <div class="absolute z-0 bottom-140 right-200 w-200 h-200 shadow-xl rounded-full "></div>
+      <div class="absolute z-0 bottom-70 left-300 w-200 h-200 shadow-xl rounded-full "></div>
 
       <div class="flex mb-30">
         <div class="w-1/3 p-20">
@@ -44,8 +45,8 @@ import { RouterLink } from 'vue-router';
         </div>
 
         <!-- button -->
-        
-    
+
+
       </div>
 
     </div>
