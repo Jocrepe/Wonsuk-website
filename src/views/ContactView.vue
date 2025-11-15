@@ -26,20 +26,20 @@ const send = () => {
 
 <template>
   <UserLayout>
-    <div class="flex w-full mb-50 gap-10 mt-10">
-      <div class=" flex flex-col text-center items-center bg-success-content	">
+    <div class="flex w-full mb-50 gap-2 mt-10 lg:mx-10">
+      <div class="relative flex flex-col items-center bg-success-content w-250 rounded-xl border" >
         <RouterLink to="/repairshop">
-          <div class="w-8 h-8 absolute top-47 left-55 cursor-pointer">
+          <div class="w-8 h-8 absolute cursor-pointer lg:[top:20px] lg:[left:30px]">
             <Back></Back>
           </div>
         </RouterLink>
         <img :src="contact.item[0]?.imageUrl" alt="" class="w-80 mt-20">
         <div>
-          <p class="text-2xl mt-10">{{ contact.item[0]?.name }}</p>
+          <p class="text-2xl mt-10 p-5">{{ contact.item[0]?.name }}</p>
         </div>
-        <div class="flex ml-19 mt-5">
-          <p class="w-47 text-xl">Review : {{ contact.item[0]?.reviewscore }} / 5.0</p>
-          <img src="@/assets/icon/star.png" alt="" class="w-5 h-5 mr-80">
+        <div class="relative text-center w-full h-10 mt-5">
+          <p class="w-full text-xl">Review : {{ contact.item[0]?.reviewscore }} / 5.0</p>
+          <img src="@/assets/icon/star.png" alt="" class="absolute w-5 h-5 lg:[bottom:20px] lg:[left:330px] 2xl:[bottom:20px] 2xl:[left:390px]">
         </div>
         <div>
           <p class="text-xl mt-10 pb-10">open: {{ contact.item[0]?.open }}</p>

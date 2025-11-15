@@ -30,7 +30,7 @@ export const useRepairshopStore = defineStore('repairshop', {
       open: '9 โมงถึง 3 ทุ่ม',
     },
     {
-      name: 'Anong รับปรับเปลี่ยน แก้ทรง เสื้อ กางเกงs',
+      name: 'Anong รับปรับเปลี่ยน แก้ทรง เสื้อ กางเกง',
       imageUrl: Clothes,
       reviewscore: '4.8',
       about: '"รับแก้ทรงเสื้อ กางเกง เย็บ บริการที่คุณประทับใจ ซ่อมด้วยเครื่องมือครบ ทีมช่างประสบการณ์สูง"',
