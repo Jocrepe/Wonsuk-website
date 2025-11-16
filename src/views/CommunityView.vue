@@ -4,6 +4,7 @@ import UserLayout from '@/components/user/UserLayout.vue';
 import Back from '@/components/user/Back.vue';
 
 import { useCommunityStore } from '@/stores/community';
+import { ref } from 'vue';
 
 // swiper
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -23,6 +24,32 @@ const modules = [Navigation, Pagination];
 
 
 const community = useCommunityStore()
+
+const comments = ref({})
+
+const text = ref({})
+
+const send = (slideId) => {
+  if (!text.value[slideId].trim()) return
+
+  if (!comments.value[slideId]) comments.value[slideId] = []
+
+  comments.value[slideId].push({
+    id: Date.now(),
+    text: text.value[slideId],
+    sender: 'me'
+  })
+
+  // เก็บลง localStorage
+  localStorage.setItem('comments', JSON.stringify(comments.value))
+
+  text.value[slideId] = ''
+}
+
+// โหลด comment จาก localStorage
+if (localStorage.getItem('comments')) {
+  comments.value = JSON.parse(localStorage.getItem('comments'))
+}
 
 </script>
 
@@ -47,7 +74,7 @@ const community = useCommunityStore()
         :modules="modules"
         class="mySwiper"
       >
-        <swiper-slide v-for="i in community.list">
+        <swiper-slide v-for="i in community.list" :key="i.id">
             <div class="flex flex-col w-full h-full bg-base-300 cursor-pointer">
               <div class="w-full ">
                 <img :src="i.imageUrl" alt="" class=" w-full  p-10" >
@@ -56,8 +83,8 @@ const community = useCommunityStore()
                 <div class="w-1/4 w-15 h-15 lg:mr-5">
                   <img src="@/assets/icon/man.png" alt="">
                 </div>
-                <div class="flex flex-col w-3/4 lg:items-start">
-                  <div classs="w-60">
+                <div class="flex flex-col w-3/4 lg:items-start 2xl:items-start">
+                  <div class="w-60 flex ">
                     <p class="lg:text-xl 2xl:text-3xl">{{ i.name }}</p>
                   </div>
                   <div class="lg:">
@@ -72,7 +99,21 @@ const community = useCommunityStore()
               <div class="w-full border mb-5"></div>
 
               <div class="w-full lg:p-5">
-                <textarea class="text-xl textarea rounded-xl p-5" placeholder="Comment..."></textarea>
+                <textarea v-model="text[i.id]" class="text-xl textarea rounded-xl p-5" placeholder="Comment..."></textarea>
+                <button @click="send(i.id)" class="btn btn-primary ml-5"><p>Post</p></button>
+              </div>
+
+              <div class="flex-1 overflow-y-auto mb-4 space-y-2 p-4 bg-base-200 rounded-xl h-full mx-5 ">
+                <div v-for="m in comments[i.id] || []" :key="m.id" class="flex justify-center">
+                  <div class="flex items-center bg-base-300 text-black px-4 py-2 rounded-xl max-w-xs">
+                    <div class="w-15 h-15 m-5">
+                      <img src="@/assets/icon/man.png" alt="">
+                    </div>
+                    <div class>
+                      <p>{{ m.text }}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
             </div>
