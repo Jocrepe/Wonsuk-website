@@ -3,6 +3,7 @@
 import UserLayout from '@/components/user/UserLayout.vue';
 
 import { useExchangeStore } from '@/stores/exchange';
+import { useContactStore } from '@/stores/contact';
 
 // swiper
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -21,12 +22,17 @@ import { Navigation, Pagination } from 'swiper/modules';
 const modules = [Navigation, Pagination];
 
 const exchange = useExchangeStore()
+const contact = useContactStore()
+
+const addToContact = (exchange) => {
+  contact.addToitem(exchange)
+}
 
 </script>
 
 <template>
   <UserLayout>
-    <div class="w-full bg-[#91FF91]">
+    <div class="w-full bg-primary">
       <div class="flex ">
         <div class="w-1/2">
           <img src="@/assets/icon/exchange1.png" alt="">
@@ -37,7 +43,7 @@ const exchange = useExchangeStore()
               หน้าสินค้าแลกเปลี่ยน
             </p>
           </div>
-          <div class="w-full flex justify-center mt-15">
+          <div class="w-full flex justify-center mt-20">
             <label class="input text-2xl h-17 w-100">
               <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
@@ -68,14 +74,14 @@ const exchange = useExchangeStore()
         :modules="modules"
         class="mySwiper"
       >
-        <swiper-slide v-for="i in exchange.list"><img :src="i.imageUrl" alt="" class="cursor-pointer"></swiper-slide>
-     
+        <swiper-slide v-for="i in exchange.list"><RouterLink to="/exchangeshop"><img :src="i.imageUrl" alt="" class="cursor-pointer" @click="addToContact(i)"></img></RouterLink></swiper-slide>
+
       </swiper>
 
       <p class="append-buttons"></p>
     </div>
 
-    
+
   </UserLayout>
 </template>
 

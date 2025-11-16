@@ -1,5 +1,6 @@
 <script setup>
 import UserLayout from '@/components/user/UserLayout.vue';
+import Back from '@/components/user/Back.vue';
 
 import { ref } from 'vue';
 
@@ -23,13 +24,18 @@ const send = () => {
 
 <template>
   <UserLayout>
+    <RouterLink to="/repair">
+      <div class="w-8 h-8 absolute cursor-pointer lg:[top:170px] lg:[left:50px] 2xl:[top:170px] 2xl:[left:350px]">
+        <Back></Back>
+      </div>
+    </RouterLink>
     <div class="mt-10">
       <p class="text-black text-5xl text-center">
         แจ้งของที่อยากซ่อม
       </p>
 
     </div>
-    <div class="w-full h-170 mt-10 mb-20">
+    <div class="w-full h-170 mt-10 mb-20 lg:mx-5 2xl:mx-10">
 
         <!-- กล่องข้อความ -->
         <div class="flex-1 overflow-y-auto mb-4 space-y-2 p-4 bg-base-200 rounded-xl h-full">
