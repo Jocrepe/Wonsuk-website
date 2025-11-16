@@ -8,6 +8,8 @@ import ContactView from '@/views/ContactView.vue'
 import ExchangeView from '@/views/ExchangeView.vue'
 import ExchangeshopView from '@/views/ExchangeshopView.vue'
 import SaleprofileView from '@/views/SaleprofileView.vue'
+import ReportfixView from '@/views/ReportfixView.vue'
+import CommunityView from '@/views/CommunityView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,6 +58,16 @@ const router = createRouter({
       path:'/saleprofile',
       name: 'saleprofile',
       component:SaleprofileView,
+    },
+    {
+      path:'/reportfix',
+      name:'reportfix',
+      component:ReportfixView,
+    },
+    {
+      path:'/community',
+      name:'community',
+      component:CommunityView,
     }
   ],
 })

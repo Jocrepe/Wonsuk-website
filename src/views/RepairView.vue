@@ -44,7 +44,8 @@ import Back from '@/components/user/Back.vue';
         </RouterLink>
       </div>
       <div class="flex justify-center items-center">
-        <button class="btn btn-soft flex flex-col lg:w-[250px] lg:h-[465px] 2xl:w-[399px] 2xl:h-[465px]">
+        <RouterLink to="/reportfix">
+          <button class="btn btn-soft flex flex-col lg:w-[250px] lg:h-[465px] 2xl:w-[399px] 2xl:h-[465px]">
           <img src="@/assets/icon/แจ้งของที่อยากซ่อม.png" alt="" class="">
           <p class="text-xl mt-1 ">แจ้งของที่อยากซ่อม</p>
           <p class="text-md mt-2 mb-5">
@@ -52,6 +53,8 @@ import Back from '@/components/user/Back.vue';
             <br>ช่างผู้เชี่ยวชาญจะติดต่อกลับทันที
           </p>
         </button>
+
+        </RouterLink>
       </div>
 
     </div>

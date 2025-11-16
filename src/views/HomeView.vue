@@ -62,7 +62,7 @@ const checkLoggedIn = (path) => {
           </button>
         </div>
         <div class="flex justify-center items-center">
-          <button class="btn btn-outline btn-success flex flex-col w-70 h-70 rounded-xl">
+          <button class="btn btn-outline btn-success flex flex-col w-70 h-70 rounded-xl" @click="checkLoggedIn('/community')">
             <img src="@/assets/icon/commu.png" alt="" class="">
             <p class="text-3xl mt-5">ชุมชน</p>
           </button>

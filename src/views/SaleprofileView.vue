@@ -21,15 +21,20 @@ import UserLayout from '@/components/user/UserLayout.vue';
     </div>
     <div class="w-full border">
     </div>
-    <div class="flex">
-      <div class="ml-20">
-        aa
+    <div class="flex mt-15 mb-15 justify-center">
+      <div class="flex flex-col bg-neutral-content p-10 ml-15 rounded-xl">
+        <img src="@/assets/icon/image1.png" alt="">
+        <p class="text-3xl text-black mt-15 mb-15 text-center">จักรเย็บผ้า</p>
       </div>
-      <div class="ml-20">
-        aa
+      <div class="flex flex-col bg-neutral-content p-10 ml-15 rounded-xl">
+        <img src="@/assets/icon/image2.png" alt="">
+        <p class="text-3xl text-black mt-15 mb-15 text-center">กระเป๋าสาน</p>
+
       </div>
-      <div class="ml-20">
-        aa
+      <div class="flex flex-col bg-neutral-content ml-15 p-10 rounded-xl">
+        <img src="@/assets/icon/image3.png" alt="">
+        <p class="text-3xl text-black mt-15 mb-15 text-center">เก้าอี้ไม้เอนหลัง</p>
+
       </div>
 
     </div>
