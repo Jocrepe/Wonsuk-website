@@ -2,6 +2,8 @@
 
 import UserLayout from '@/components/user/UserLayout.vue';
 
+import { useExchangeStore } from '@/stores/exchange';
+
 // swiper
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -18,6 +20,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 
 const modules = [Navigation, Pagination];
 
+const exchange = useExchangeStore()
 
 </script>
 
@@ -65,10 +68,8 @@ const modules = [Navigation, Pagination];
         :modules="modules"
         class="mySwiper"
       >
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
-        <swiper-slide>Slide 4</swiper-slide>
+        <swiper-slide v-for="i in exchange.list"><img :src="i.imageUrl" alt="" class="cursor-pointer"></swiper-slide>
+     
       </swiper>
 
       <p class="append-buttons"></p>
