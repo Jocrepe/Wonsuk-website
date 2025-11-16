@@ -7,6 +7,7 @@ import RepairshopView from '@/views/RepairshopView.vue'
 import ContactView from '@/views/ContactView.vue'
 import ExchangeView from '@/views/ExchangeView.vue'
 import ExchangeshopView from '@/views/ExchangeshopView.vue'
+import SaleprofileView from '@/views/SaleprofileView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +51,11 @@ const router = createRouter({
       path:'/exchangeshop',
       name: 'exchangeshop',
       component:ExchangeshopView,
+    },
+    {
+      path:'/saleprofile',
+      name: 'saleprofile',
+      component:SaleprofileView,
     }
   ],
 })

@@ -26,7 +26,7 @@ const modules = [Navigation, Pagination];
     <div class="w-full bg-[#91FF91]">
       <div class="flex ">
         <div class="w-1/2">
-          <img src="@/assets/icon/Exchange1.png" alt="">
+          <img src="@/assets/icon/exchange1.png" alt="">
         </div>
         <div class="flex flex-col w-1/2">
           <div class="w-full text-center mt-15">
