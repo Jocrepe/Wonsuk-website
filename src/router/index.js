@@ -5,6 +5,8 @@ import RepairView from '@/views/RepairView.vue'
 import FindserviceView from '@/views/FindserviceView.vue'
 import RepairshopView from '@/views/RepairshopView.vue'
 import ContactView from '@/views/ContactView.vue'
+import ExchangeView from '@/views/ExchangeView.vue'
+import ExchangeshopView from '@/views/ExchangeshopView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +40,16 @@ const router = createRouter({
       path: '/contact',
       name: 'contact',
       component: ContactView,
+    },
+    {
+      path:'/exchange',
+      name: 'exchange',
+      component:ExchangeView,
+    },
+    {
+      path:'/exchangeshop',
+      name: 'exchangeshop',
+      component:ExchangeshopView,
     }
   ],
 })
