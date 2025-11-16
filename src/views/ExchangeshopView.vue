@@ -41,10 +41,14 @@ const contact = useContactStore()
     </div>
     <div class="flex w-full justify-center mb-15 mt-15">
       <div class="flex w-1/2 justify-center">
-        <button class="btn btn-success p-20 text-3xl ml-30 rounded-xl"><p>แลกเปลี่ยน</p></button>
+        <RouterLink to="/contact">
+          <button class="btn btn-success p-20 text-3xl ml-30 rounded-xl"><p>แลกเปลี่ยน</p></button>
+        </RouterLink>
       </div>
       <div class="w-1/2 flex justify-center">
-        <button class="btn btn-accent p-20 text-3xl rounded-xl"><p>ซื้อ</p></button>
+        <RouterLink to="/contact">
+          <button class="btn btn-accent p-20 text-3xl rounded-xl"><p>ซื้อ</p></button>
+        </RouterLink>
       </div>
 
     </div>
